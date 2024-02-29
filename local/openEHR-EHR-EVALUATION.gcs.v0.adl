@@ -1,0 +1,102 @@
+archetype (adl_version=1.4; uid=8f29605c-1983-4771-9813-1085114ccaff)
+	openEHR-EHR-EVALUATION.gcs.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2024-02-29">
+		["name"] = <"Marlene Pérez Colman">
+		["organisation"] = <"Digital Health and Care Wales">
+		["email"] = <"marlene.perezcolman@wales.nhs.uk">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"cf55c3f7542973e15fd2d74ac8ccc337">
+		["build_uid"] = <"1b997149-23f3-36c1-84b2-e17fcf01fd14">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- GCS
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Eyes
+						value matches {
+							DV_ORDINAL matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Verbal
+						value matches {
+							DV_ORDINAL matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Mobility
+						value matches {
+							DV_ORDINAL matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Level of consicousness
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"GCS">
+					description = <"GCS">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Eyes">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Verbal">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Mobility">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Comment">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Level of consicousness">
+					description = <"">
+				>
+			>
+		>
+	>
